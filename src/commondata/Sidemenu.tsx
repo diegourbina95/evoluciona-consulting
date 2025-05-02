@@ -1,58 +1,77 @@
 export const MENUITEMS = [
-    {
-        menutitle: "MAIN",
-        Items: [
-            { path: `${import.meta.env.BASE_URL}dashboard`, icon: 'fe fe-home', type: 'link', active: false, selected: false, title: 'Dashboard' },
-        ]
-    },
-    {
-        menutitle: "MISC PAGES",
-        id: 6,
-        Items: [
-            {
-                path: `${import.meta.env.BASE_URL}ErrorPages`, 
-                icon:'fe fe-users',
-                type: 'sub',
-                active: false,
-                selected: false,
-                title: 'ErrorPages',
-                children: [
-                    { path: `${import.meta.env.BASE_URL}ErrorPages/error400`, type: 'link', active: false, selected: false, title: '400' },
-                   
-    
-                ]
-    
-            },
-        ]
-    
-        },
-        {
-            menutitle: "SUB MENUS",
-            id: 5,
-            Items: [
-               
-                {
-                    path: `${import.meta.env.BASE_URL}Submenus`,
-                    icon: 'fe fe-align-center',
-                    type: 'sub',
-                    active: false,
-                    selected: false,
-                    title: 'Submenus',
-                    children: [
-                        {
-                            type: 'sub', active: false, selected: false, title: 'Submenu1', children:
-                                [
-                                    { path: `${import.meta.env.BASE_URL}`, type: 'link', active: false, selected: false, title: 'Submenu1.1' },
-                                    { path: `${import.meta.env.BASE_URL}`, type: 'link', active: false, selected: false, title: 'Submenu1.2' },
-                                    { path: `${import.meta.env.BASE_URL}`, type: 'link', active: false, selected: false, title: 'Submenu1.3' },
-    
-                                ]
-                        },
-                        { path: `${import.meta.env.BASE_URL}`, type: 'link', active: false, selected: false, title: 'Submenus2' },
-    
-                    ]
-                },
-    
-            ]
-        },
-]
+  {
+    menutitle: "MAIN",
+    Items: [
+      {
+        path: `${import.meta.env.BASE_URL}dashboard`,
+        icon: "fe fe-home",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Dashboard",
+      },
+    ],
+  },
+  {
+    menutitle: "FACTORING",
+    id: 6,
+    Items: [
+      {
+        path: `${import.meta.env.BASE_URL}registrar-factura`,
+        icon: "fe fe-file-plus",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Registrar factura",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}anotar-en-cuenta`,
+        icon: "fa fa-file-text",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Anotar en cuenta",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}registrar-y-anotar`,
+        icon: "zmdi zmdi-collection-text",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Registar y anotar",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}redimir-factura`,
+        icon: "bi bi-calendar2-check",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Redimir factura",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}transferir-traspaso`,
+        icon: "bi bi-arrow-left-right",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Transferir/Traspaso",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}reprogramar-pagos`,
+        icon: "bi bi-calendar2-event",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Reprogramar pagos",
+      },
+      {
+        path: `${import.meta.env.BASE_URL}generar-constancia`,
+        icon: "fe fe-file",
+        type: "link",
+        active: false,
+        selected: false,
+        title: "Generar constancia",
+      },
+    ],
+  },
+];

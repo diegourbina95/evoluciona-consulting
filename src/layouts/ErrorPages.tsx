@@ -1,21 +1,20 @@
-import  { FC, Fragment } from 'react';
-import { Outlet } from 'react-router-dom';
-import Switcher1 from './layoutcomponents/Switcher1';
+import { FC, Fragment } from "react";
+import Switcher1 from "./layoutcomponents/Switcher1";
 
+interface ErrorPagesProps {
+  children: React.ReactNode;
+}
 
-interface ErrorPagesProps { }
-
-const ErrorPages: FC<ErrorPagesProps> = () => {
-
-document.querySelector("body")?.classList.add( 'login-img');
-    return(
-
+const ErrorPages: FC<ErrorPagesProps> = ({ children }) => {
+  document.querySelector("body")?.classList.add("login-img");
+  return (
     <Fragment>
-        <div>
-        <Switcher1/>
-           <Outlet />
-        </div>
+      <div>
+        <Switcher1 />
+        {children}
+      </div>
     </Fragment>
-);}
+  );
+};
 
 export default ErrorPages;

@@ -10,20 +10,20 @@ const Onhover = () => {
 const Outhover = () => {
   document.querySelector(".app")?.classList.remove("sidenav-toggled-open");
 };
-let history: any = [];
+const history: any = [];
 
 export const Sidebar = () => {
-  let location = useLocation();
+  const location = useLocation();
   const [menuitems, setMenuitems] = useState(MENUITEMS);
   useEffect(() => {
-    history.push(location.pathname); // add  history to history  stack for current location.pathname to prevent multiple history calls innerWidth  and innerWidth calls from  multiple users. This is important because the history stack is not always empty when the user clicks  the history
+    history.push(location.pathname);
     if (history.length > 2) {
       history.shift();
     }
     if (history[0] !== history[1]) {
       setSidemenu();
     }
-    let mainContent: any = document.querySelector(".main-content");
+    const mainContent: any = document.querySelector(".main-content");
 
     //when we click on the body to remove
 

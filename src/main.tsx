@@ -29,14 +29,13 @@ root.render(
               ))}
             </Route>
             <Route
-              path={`${import.meta.env.BASE_URL}`}
-              element={<ErrorPages />}
-            >
-              <Route
-                path={`${import.meta.env.BASE_URL}errorpages/error400`}
-                element={<Error400 />}
-              />
-            </Route>
+              path="*"
+              element={
+                <ErrorPages>
+                  <Error400 />
+                </ErrorPages>
+              }
+            />
           </Routes>
         </React.Suspense>
       </BrowserRouter>
