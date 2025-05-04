@@ -6,8 +6,8 @@ import "./index.scss";
 import { RouterData } from "./commondata/routingdata";
 import App from "./layouts/app";
 import ErrorPages from "./layouts/ErrorPages";
-import Error400 from "./components/Errorpages/Error400/Error400";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Error400 from "./components/error-pages/Error400";
+import Dashboard from "./views/Dashboard/Dashboard";
 
 const container: HTMLElement | any = document.getElementById("root");
 const root = createRoot(container);
