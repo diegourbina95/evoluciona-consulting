@@ -1,13 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loader from "./layouts/layoutcomponents/Loader";
 import "./index.scss";
 import { RouterData } from "./commondata/routingdata";
-import App from "./layouts/app";
+
 import ErrorPages from "./layouts/ErrorPages";
 import Error400 from "./components/error-pages/Error400";
-import Dashboard from "./views/Dashboard/Dashboard";
+
+const AppLayout = lazy(() => import("@/layouts/app"));
+const AutenticationLayout = lazy(() => import("@/layouts/AutenticationLayout"));
+
+const LoginPage = lazy(() => import("@/views/Login"));
+const DashboardPage = lazy(() => import("@/views/Dashboard"));
+const ForgotPasswordPage = lazy(() => import("@/views/ForgotPassword"));
 
 const container: HTMLElement | any = document.getElementById("root");
 const root = createRoot(container);
@@ -18,8 +24,20 @@ root.render(
       <BrowserRouter>
         <React.Suspense fallback={<Loader />}>
           <Routes>
-            <Route path={`${import.meta.env.BASE_URL}`} element={<App />}>
-              <Route index element={<Dashboard />} />
+            {/* Authentication Pages */}
+            <Route element={<AutenticationLayout />}>
+              <Route
+                path={`${import.meta.env.BASE_URL}login`}
+                element={<LoginPage />}
+              />
+              <Route
+                path={`${import.meta.env.BASE_URL}recuperar-password`}
+                element={<ForgotPasswordPage />}
+              />
+            </Route>
+
+            <Route path={`${import.meta.env.BASE_URL}`} element={<AppLayout />}>
+              <Route index element={<DashboardPage />} />
               {RouterData.map((idx) => (
                 <Route
                   path={idx.path}

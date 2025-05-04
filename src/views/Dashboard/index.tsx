@@ -19,7 +19,7 @@ import {
 import { InformativeWidget } from "@/components/widgets";
 import { TodayBillsTypography } from "@/components/typography";
 
-function Dashboard() {
+function DashboardPage() {
   const tableInstance = useTable(
     {
       columns: COLUMNS1,
@@ -334,4 +334,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardPage;
