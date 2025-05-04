@@ -12,9 +12,6 @@ import {
   COLUMNS1,
   DATATABLE1,
   GlobalFilter,
-  Data,
-  Data2,
-  Data3,
 } from "../../commondata/dashboarddata";
 import { InformativeWidget } from "@/components/widgets";
 import { TodayBillsTypography } from "@/components/typography";
@@ -131,37 +128,40 @@ function DashboardPage() {
             <Card.Body>
               <Tab.Container
                 id="left-tabs-example"
-                defaultActiveKey="AllProducts"
+                defaultActiveKey="AllInvoices"
               >
                 <Nav variant="pills" className="product-sale">
                   <Nav.Item>
-                    <Nav.Link eventKey="AllProducts" className="text-dark">
+                    <Nav.Link eventKey="AllInvoices" className="text-dark">
                       Todos
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Shipped" className="text-dark">
+                    <Nav.Link
+                      eventKey="PendingRegistration"
+                      className="text-dark"
+                    >
                       Pendiente de registrar
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Pending" className="text-dark">
+                    <Nav.Link eventKey="Registered" className="text-dark">
                       Registradas
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Cancelled" className="text-dark">
+                    <Nav.Link eventKey="Annotated" className="text-dark">
                       Anotadas
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Shipped" className="text-dark">
+                    <Nav.Link eventKey="Redeemed" className="text-dark">
                       Redimidas
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
                 <Tab.Content>
-                  <Tab.Pane eventKey="AllProducts">
+                  <Tab.Pane eventKey="AllInvoices">
                     <Card.Body className="pt-0 example1-table">
                       <div className="table-responsive">
                         <>
@@ -315,15 +315,9 @@ function DashboardPage() {
                       </div>
                     </Card.Body>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="Shipped">
-                    <Data />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="Pending">
-                    <Data2 />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="Cancelled">
-                    <Data3 />
-                  </Tab.Pane>
+                  <Tab.Pane eventKey="Registered"></Tab.Pane>
+                  <Tab.Pane eventKey="Annotated"></Tab.Pane>
+                  <Tab.Pane eventKey="Redeemed"></Tab.Pane>
                 </Tab.Content>
               </Tab.Container>
             </Card.Body>
