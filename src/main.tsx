@@ -14,6 +14,7 @@ const AutenticationLayout = lazy(() => import("@/layouts/AutenticationLayout"));
 const LoginPage = lazy(() => import("@/views/Login"));
 const DashboardPage = lazy(() => import("@/views/Dashboard"));
 const ForgotPasswordPage = lazy(() => import("@/views/ForgotPassword"));
+const ChangePasswordPage = lazy(() => import("@/views/ChangePassword"));
 
 const container: HTMLElement | any = document.getElementById("root");
 const root = createRoot(container);
@@ -33,6 +34,10 @@ root.render(
               <Route
                 path={`${import.meta.env.BASE_URL}recuperar-password`}
                 element={<ForgotPasswordPage />}
+              />
+              <Route
+                path={`${import.meta.env.BASE_URL}cambiar-password`}
+                element={<ChangePasswordPage />}
               />
             </Route>
 
